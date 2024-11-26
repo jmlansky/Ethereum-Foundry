@@ -7,6 +7,7 @@ import {Counter} from "../src/Counter.sol";
 contract CounterTest is Test {
     Counter public counter;
 
+    // Esta funcion se ejecuta ANTES DE CADA funcion de test
     function setUp() public {
         counter = new Counter();
         counter.setNumber(0);
@@ -15,6 +16,18 @@ contract CounterTest is Test {
     function test_Increment() public {
         counter.increment();
         assertEq(counter.number(), 1);
+    }
+
+    function test_Decrement() public {
+        counter.increment();
+        counter.increment();
+        counter.decrement();
+        assertEq(counter.number(), 1);
+    } 
+
+    function test_DecrementUnderflow() public {
+        vm.expectRevert();
+        counter.decrement();
     }
 
     function testFuzz_SetNumber(uint256 x) public {
