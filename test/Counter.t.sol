@@ -19,6 +19,8 @@ contract CounterTest is Test {
     }
 
     function test_Decrement() public {
+        console.log("LOG DE TEST");
+
         counter.increment();
         counter.increment();
         counter.decrement();

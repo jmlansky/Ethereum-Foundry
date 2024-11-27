@@ -12,7 +12,7 @@ contract HelloWorldTest is Test {
         helloWorldContract = new HelloWorld();
     }
 
-    function testGetMessage() public {
+    function testGetMessage() public view{
         string memory message = helloWorldContract.getMessage();
         assertEq(message, "Hello World from Foundry");
     }
