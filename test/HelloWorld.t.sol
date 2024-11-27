@@ -9,7 +9,7 @@ contract HelloWorldTest is Test {
 
     // Esta funcion se ejecuta ANTES DE CADA funcion de test
     function setUp() public {
-        helloWorldContract = new HelloWorld();        
+        helloWorldContract = new HelloWorld();
     }
 
     function testGetMessage() public {

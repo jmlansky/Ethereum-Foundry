@@ -23,7 +23,7 @@ contract CounterTest is Test {
         counter.increment();
         counter.decrement();
         assertEq(counter.number(), 1);
-    } 
+    }
 
     function test_DecrementUnderflow() public {
         vm.expectRevert();
